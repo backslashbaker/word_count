@@ -85,4 +85,13 @@ describe WordCount do
         end
     end
 
+    context "edge cases" do
+        it "isn't affected by new lines" do
+            expect(word_count.count("hello \nfish fish")).to eq ({
+                "hello" => 1, 
+                "fish" => 2 
+            })
+        end
+    end
+
  end
