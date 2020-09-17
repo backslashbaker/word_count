@@ -66,12 +66,23 @@ describe WordCount do
     context "edge cases" do
         it "isn't confused by punctuation within words" do
             expect(word_count.count("car: carpet as java: javascript!!&@$%^&")).to eq ({
-                "car"=>1, 
-                "carpet"=>1, 
-                "as"=>1, 
-                "java"=>1, 
-                "javascript"=>1
+                "car" => 1, 
+                "carpet" => 1, 
+                "as" => 1, 
+                "java" => 1, 
+                "javascript" => 1
             })
         end
     end
+
+    context "edge cases" do
+        it "isn't affected by capitals" do
+            expect(word_count.count("Hello FISH fish spongE")).to eq ({
+                "hello" => 1, 
+                "fish" => 2, 
+                "sponge" => 1
+            })
+        end
+    end
+
  end
