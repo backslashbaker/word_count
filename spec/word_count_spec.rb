@@ -1,11 +1,10 @@
 require_relative ('../word_count')
 
 describe WordCount do
-    context “...” do
-       it "..." do
-          hw = HelloWorld.new
-          message = hw.say_hello
-          expect(message).to eq "Hello World!"
+    context "word count" do
+       it "returns empty hash when passed null" do
+          word_count = WordCount.new
+          expect(word_count.count("")).to eq ({})
        end
     end
  end
