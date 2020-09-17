@@ -4,7 +4,7 @@ class WordCount
         if string.empty?
             return {}
         else 
-            return {"hello" => 1}
+            return {string => 1}
         end
     end
 end

@@ -15,6 +15,13 @@ describe WordCount do
         end
      end
 
+     context "word count" do
+        it "counts other single strings" do
+            word_count = WordCount.new
+            expect(word_count.count("sponge")).to eq ({ "sponge" => 1})
+        end
+    end
+
     context "edge cases" do
         it "doesn't count several spaces" do # e.g. "     "
             skip
