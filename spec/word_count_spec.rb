@@ -7,4 +7,17 @@ describe WordCount do
           expect(word_count.count("")).to eq ({})
        end
     end
+
+    context "word count" do
+        it "counts one string" do
+           word_count = WordCount.new
+           expect(word_count.count("hello")).to eq ({ "hello" => 1 })
+        end
+     end
+
+    context "edge cases" do
+        it "doesn't count several spaces" do # e.g. "     "
+            skip
+        end
+    end
  end
