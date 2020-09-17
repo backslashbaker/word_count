@@ -1,14 +1,11 @@
 class WordCount
 
     def count(string)
-        counter = 0
-        if string.empty?
-            return {}
-        elsif !string.include?(" ")
-            return {string => 1}
-        else 
-            words = string.split(" ")
-            return { words[0] => words.count }
+        words = string.gsub(/[^\sA-Za-z]+/, "").split(" ")
+        frequency = Hash.new(0)
+        words.each do |word| 
+            frequency[word] += 1
         end
+        return frequency
     end
 end
