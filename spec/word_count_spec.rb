@@ -27,6 +27,12 @@ describe WordCount do
         end
     end
 
+    context "word count" do
+        it "counts other same words twice" do
+            expect(word_count.count("hello hello")).to eq ({ "hello" => 2})
+        end
+    end
+
     context "edge cases" do
         it "doesn't count several spaces" do # e.g. "     "
             skip

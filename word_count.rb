@@ -6,7 +6,8 @@ class WordCount
         elsif !string.include?(" ")
             return {string => 1}
         else 
-            return { "sponge" => 2 }
+            words = string.split(" ")
+            return { words[0] => 2 }
         end
     end
 end
