@@ -94,4 +94,15 @@ describe WordCount do
         end
     end
 
+    context "edge cases" do
+        it "doesn't ignore punctuation within words (e.g. apostrophes)" do
+            expect(word_count.count("this fish isn't mine")).to eq ({
+                "this" => 1, 
+                "fish" => 1,
+                "isn't" => 1,
+                "mine" => 1,
+            })
+        end
+    end
+
  end

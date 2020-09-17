@@ -11,6 +11,6 @@ class WordCount
     private 
 
     def remove_punctuation(string)
-       string.gsub(/[^\s\w]+/, "")
+       string.gsub(/[^'[:^punct:]]/, "")
     end
 end
