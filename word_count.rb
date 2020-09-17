@@ -1,6 +1,10 @@
 class WordCount
     def count(string)
-        words = remove_punctuation(string).downcase.split(" ")
+        words = string
+            .downcase
+            .split(/[\s,]+/)
+            .map {|w| remove_punctuation(w)}
+        
         frequency = Hash.new(0)
         words.each do |word| 
             frequency[word] += 1
